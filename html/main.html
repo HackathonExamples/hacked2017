@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Main App Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+    </link>
+    <link rel="stylesheet" href="basic.css">
+    </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <h3>Main Page of App for Hackathon</h3>
+    <button class="btn btn-primary" onClick="app.listAccounts()">Get Accounts</button>
+    <button class="btn btn-default" data-toggle="modal" data-target="#myModal">New Account</button>
+    <table id="accounts" class="table table-condensed"></table>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Create New Account</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>Account Type</label>
+                <select class="form-control" id="account-type">
+                  <option value="Accounts Receivable">Accounts Receivable (A/R)</option>
+                  <option value="Other Asset">Other Asset</option>
+                  <option value="Fixed Asset">Fixed Asset</option>
+                  <option value="Accounts Payable">Accounts Payable (A/P)</option>
+                  <option value="Income">Income</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Account Name</label>
+                <input class="form-control" id="account-name" type="text" placeholder="Enter account name here" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="app.newAccount()">Save</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
